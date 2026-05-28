@@ -1,0 +1,7 @@
+Mi primera practica con Git y GitHub
+
+Carol Peña
+Aplicaciones Open Source
+27/05/2026
+
+Estoy aprendiendo a usar control de versiones

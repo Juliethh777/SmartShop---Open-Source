@@ -1,97 +1,77 @@
 body {
-
     margin: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
-
     background-image: url("../img/F.SmartShop.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-    height: 100vh;
-
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container {
+.registro-container {
 
+    width: 400px;
     background: rgba(15,23,42,0.85);
-
-    backdrop-filter: blur(12px);
-
-    color: white;
-
-    border: 1px solid rgba(59,130,246,0.3);
-
-    box-shadow: 0 0 30px rgba(37,99,235,0.41);
-
-    border-radius: 25px;
-
+    border-radius: 20px;
     padding: 40px;
-
-    width: 350px;
-
     text-align: center;
-
-    margin-left: 250px;
 }
 
-.logo {
+.avatar {
 
-    width: 140px;
-
-    height: auto;
-
-    margin-bottom: 15px;
-
-    border-radius: 15px;
-
-    box-shadow: 0 0 20px rgba(37,99,235,0.5);
+    width: 90px;
+    height: 90px;
+    background: #2563eb;
+    color: white;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
 }
 
 h1 {
 
     color: #2563eb;
-
-    margin-bottom: 5px;
+    margin-bottom: 25px;
 }
 
-h3 {
+p {
 
     color: gray;
-
     margin-bottom: 25px;
+}
+
+form {
+
+    margin-top: 25px;
 }
 
 input {
 
     width: 90%;
-
     padding: 12px;
-
-    margin: 10px 0;
-
+    margin: 10px auto;
+    display: block;
     border: 1px solid #ccc;
-
     border-radius: 10px;
+    font-size: 15px;
 }
 
 button {
 
-    width: 100%;
-
+    width: 90%;
     padding: 12px;
-
+    margin-top: 15px;
     border: none;
-
     border-radius: 10px;
-
     background: #2563eb;
-
     color: white;
-
     font-size: 16px;
 
     cursor: pointer;
@@ -100,13 +80,4 @@ button {
 button:hover {
 
     background: #1d4ed8;
-}
-
-a {
-
-    color: #2563eb;
-
-    text-decoration: none;
-
-    font-weight: bold;
 }

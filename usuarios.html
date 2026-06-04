@@ -3,38 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion de Usuarios</title>
+    <title>Gestión de Usuarios - SmartShop</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background: #0f172a;
+            color: white;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #60a5fa;
+        }
+
+        .btn {
+            background: #2563eb;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        .acciones {
+            margin: 20px 0;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-right: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1e293b;
+        }
+
+        th {
+            background: #2563eb;
+            padding: 12px;
+        }
+
+        td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #334155;
+        }
+
+    </style>
+
 </head>
+
 <body>
-    <h1>Gestion de usuarios</h1>
 
-    <a href ="dashboard.html"> Volver al panel</a>
+    <h1>👥 Gestión de Usuarios</h1>
 
-    <br><br>
+    <a class="btn" href="dashboard.html">Volver al Panel</a>
 
-    <table border = "1">
+    <div class="acciones">
+        <button>➕ Agregar Usuario</button>
+        <button>✏️ Editar Usuario</button>
+        <button>🗑️ Eliminar Usuario</button>
+    </div>
+
+    <table>
+
         <tr>
-            <th> ID</th>
-            <th> Nombre </th>
-            <th> Correo</th>
-            <th> Rol</th>
-        
-    </tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Rol</th>
+        </tr>
 
-    <tr>
-        <td>1</td>
-        <td>Juan Peña</td>
-        <td>juan@gmail.com</td>
-        <td>Administrador</td>
-    </tr>
+        <tr>
+            <td>1</td>
+            <td>Juan Peña</td>
+            <td>juan@gmail.com</td>
+            <td>Administrador</td>
+        </tr>
 
-    <tr>
-        <td>2</td>
-        <td>Ana Gomez</td>
-        <td>ana@gmail.com</td>
-        <td>Cliente</td>
-    </tr>
+        <tr>
+            <td>2</td>
+            <td>Ana Gómez</td>
+            <td>ana@gmail.com</td>
+            <td>Cliente</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>Carlos Rodríguez</td>
+            <td>carlos@gmail.com</td>
+            <td>Vendedor</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>Laura Martínez</td>
+            <td>laura@gmail.com</td>
+            <td>Cliente</td>
+        </tr>
+
     </table>
-    
+
 </body>
 </html>

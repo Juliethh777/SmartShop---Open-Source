@@ -3,39 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion de productos</title>
+    <title>Gestión de Productos - SmartShop</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background: #0f172a;
+            color: white;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #60a5fa;
+        }
+
+        .btn {
+            background: #2563eb;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        .acciones {
+            margin: 20px 0;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-right: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1e293b;
+        }
+
+        th {
+            background: #2563eb;
+            padding: 12px;
+        }
+
+        td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #334155;
+        }
+
+    </style>
+
 </head>
+
 <body>
-    <h1>Gestion de productos</h1>
 
-    <a href ="dashboard.html"> Volver al panel</a>
+    <h1>📦 Gestión de Productos</h1>
 
-    <br><br>
+    <a class="btn" href="dashboard.html">Volver al Panel</a>
 
-    <table border = "1">
+    <div class="acciones">
+        <button>➕ Agregar Producto</button>
+        <button>✏️ Editar Producto</button>
+        <button>🗑️ Eliminar Producto</button>
+    </div>
+
+    <table>
+
         <tr>
             <th>ID</th>
             <th>Nombre</th>
             <th>Precio</th>
             <th>Stock</th>
-
         </tr>
 
-    <tr>
-        <td>1</td>
-        <td>Audifonos</td>
-        <td>$50.000</td>
-        <td>20</td>
-    </tr>
+        <tr>
+            <td>1</td>
+            <td>Audífonos</td>
+            <td>$50.000</td>
+            <td>20</td>
+        </tr>
 
-    <tr>
-        <td>2</td>
-        <td>Mouse Gamer</td>
-        <td>$80.000</td>
-        <td>15</td>
-    </tr>
-    </table> 
-    
-    
+        <tr>
+            <td>2</td>
+            <td>Mouse Gamer</td>
+            <td>$80.000</td>
+            <td>15</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>Teclado Mecánico</td>
+            <td>$120.000</td>
+            <td>10</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>Monitor 24"</td>
+            <td>$650.000</td>
+            <td>8</td>
+        </tr>
+
+    </table>
+
 </body>
 </html>

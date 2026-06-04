@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Control - SmartShop</title>
+
+    <style>
+        body {
+margin: 0;
+font-family: Georgia, 'Times New Roman', Times, serif;
+background: #0f172a;
+color: white;
+display: flex;
+}
+
+.sidebar {
+width: 220px;
+height: 100vh;
+background: #111827;
+padding: 20px;
+box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+
+.sidebar h2 {
+color: #facc15;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.sidebar a {
+display: block;
+color: white;
+text-decoration: none;
+padding: 10px;
+margin: 8px 0;
+border-radius: 8px;
+transition: 0.3s;
+}
+
+.sidebar a:hover {
+background: #1d4ed8;
+}
+
+.main {
+flex: 1;
+padding: 20px;
+}
+
+.cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 20px;
+}
+
+.card {
+background: #1e293b;
+padding: 20px;
+border-radius: 12px;
+border-left: 5px solid #facc15;
+}
+
+.card h3 {
+margin: 0;
+color: #60a5fa;
+}
+
+.topbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.btn {
+background: #1d4ed8;
+padding: 8px 12px;
+border-radius: 8px;
+color: white;
+text-decoration: none;
+}
+
+.btn:hover {
+background: #2563eb;
+}
+</style>/
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2>SmartShop</h2>
+        <a href="index.html"> Inicio</a>
+        <a href="productos.html"> Productos</a>
+        <a href="usuarios.html"> Usuarios</a>
+        <a href="reportes.html"> Reportes</a>
+        <a href="registro.html"> Registro</a>
+    </div>
+
+    <div class="main">
+
+        <div class="topbar">
+            <h1>Panel de Control</h1>
+            <a class="btn" href="index.html">Salir</a>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Usuarios</h3>
+                <p>12 registrados</p>
+            </div>
+
+            <div class="card">
+                <h3>Productos</h3>
+                <p>45 en catálogo</p>
+            </div>
+
+            <div class="card">
+                <h3>Ventas</h3>
+                <p>8 hoy</p>
+            </div>
+
+            <div class="card">
+                <h3>Reportes</h3>
+                <p>3 pendientes</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>

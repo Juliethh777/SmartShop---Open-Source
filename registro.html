@@ -4,36 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Clientes</title>
-
-    <link rel="stylesheet" href="CSS/registro.css">
 </head>
+
 <body>
+
     <div class="registro-container">
-       
-        <div class="avatar"> 
+
+        <div class="avatar">
             👤
-         </div>
-        
-     
-    <h1>Bienvenido a SmartShop</h1>
-    <p>Complete sus datos para continuar</p>
+        </div>
 
-    <form action="registro.php" method="post">
-    <input type="text" name="nombre" placeholder="Ingrese Nombre" required>
-    <input type="email" name="correo" placeholder="Ingrese Correo" required>
-    <input type="text" name="telefono" placeholder="Ingrese Teléfono" required>
-    <input type="text" name="direccion" placeholder="Ingrese Dirección" required>
+        <h1>Bienvenido a SmartShop</h1>
 
-    <input type="password" name="password" placeholder="Ingrese Contraseña" required>
-    <button type="submit">Continuar</button>
-    
-      </form>
+        <p>Complete sus datos para continuar</p>
 
-      <br> 
-      
-      <a href="index.html" class="volver">Volver al Inicio</a>
-      
-      </div>
+        <form id="formRegistro">
+
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Ingrese Nombre"
+                required>
+
+            <input
+                type="email"
+                id="correo"
+                placeholder="Ingrese Correo"
+                required>
+
+            <input
+                type="text"
+                id="telefono"
+                placeholder="Ingrese Teléfono"
+                required>
+
+            <input
+                type="text"
+                id="direccion"
+                placeholder="Ingrese Dirección"
+                required>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Ingrese Contraseña"
+                required>
+
+            <button type="submit">
+                Continuar
+            </button>
+
+        </form>
+
+        <br>
+
+        <a href="index.html">
+            Volver al Inicio
+        </a>
+
+    </div>
+
+    <script src="registro.js"></script>
 
 </body>
 </html>

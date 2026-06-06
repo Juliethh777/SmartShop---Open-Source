@@ -1,126 +1,124 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Usuarios - SmartShop</title>
 
-    <style>
+```
+<style>
 
-        body {
-            margin: 0;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            background: #0f172a;
-            color: white;
-            padding: 30px;
-        }
+    body{
+        margin:0;
+        padding:30px;
+        font-family:Arial, sans-serif;
+        background:#0f172a;
+        color:white;
+    }
 
-        h1 {
-            color: #60a5fa;
-        }
+    h1{
+        color:#60a5fa;
+    }
 
-        .btn {
-            background: #2563eb;
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-right: 10px;
-        }
+    a{
+        color:white;
+        text-decoration:none;
+        padding:10px;
+        background:#2563eb;
+        border-radius:5px;
+    }
 
-        .btn:hover {
-            background: #1d4ed8;
-        }
+    table{
+        width:100%;
+        margin-top:20px;
+        border-collapse:collapse;
+    }
 
-        .acciones {
-            margin: 20px 0;
-        }
+    th,td{
+        border:1px solid #334155;
+        padding:10px;
+        text-align:center;
+    }
 
-        button {
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            margin-right: 10px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
+    th{
+        background:#2563eb;
+    }
 
-        button:hover {
-            background: #1d4ed8;
-        }
+    tr{
+        background:#1e293b;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #1e293b;
-        }
+    button{
+        padding:8px;
+        cursor:pointer;
+        border:none;
+        border-radius:5px;
+    }
 
-        th {
-            background: #2563eb;
-            padding: 12px;
-        }
-
-        td {
-            padding: 12px;
-            text-align: center;
-            border: 1px solid #334155;
-        }
-
-    </style>
+</style>
+```
 
 </head>
-
 <body>
 
-    <h1>👥 Gestión de Usuarios</h1>
+<h1>👥 Gestión de Usuarios</h1>
 
-    <a class="btn" href="dashboard.html">Volver al Panel</a>
+<a href="dashboard.html">
+    Volver al Dashboard
+</a>
 
-    <div class="acciones">
-        <button>➕ Agregar Usuario</button>
-        <button>✏️ Editar Usuario</button>
-        <button>🗑️ Eliminar Usuario</button>
-    </div>
+<table>
 
-    <table>
+```
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+        <th>Rol</th>
+    </tr>
+</thead>
 
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Rol</th>
-        </tr>
+<tbody id="tablaUsuarios">
 
-        <tr>
-            <td>1</td>
-            <td>Juan Peña</td>
-            <td>juan@gmail.com</td>
-            <td>Administrador</td>
-        </tr>
+</tbody>
+```
 
-        <tr>
-            <td>2</td>
-            <td>Ana Gómez</td>
-            <td>ana@gmail.com</td>
-            <td>Cliente</td>
-        </tr>
+</table>
 
-        <tr>
-            <td>3</td>
-            <td>Carlos Rodríguez</td>
-            <td>carlos@gmail.com</td>
-            <td>Vendedor</td>
-        </tr>
+<script>
 
-        <tr>
-            <td>4</td>
-            <td>Laura Martínez</td>
-            <td>laura@gmail.com</td>
-            <td>Cliente</td>
-        </tr>
+let usuarios =
+JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    </table>
+let tabla =
+document.getElementById("tablaUsuarios");
+
+usuarios.forEach(usuario => {
+
+    tabla.innerHTML += `
+
+    <tr>
+
+        <td>${usuario.id}</td>
+
+        <td>${usuario.nombre}</td>
+
+        <td>${usuario.correo}</td>
+
+        <td>${usuario.telefono}</td>
+
+        <td>${usuario.rol}</td>
+
+    </tr>
+
+    `;
+
+});
+
+</script>
 
 </body>
 </html>

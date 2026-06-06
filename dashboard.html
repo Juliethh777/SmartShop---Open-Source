@@ -1,166 +1,155 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Control - SmartShop</title>
 
-    <style>
+```
+<style>
 
-        body {
-            margin: 0;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            background: #0f172a;
-            color: white;
-            display: flex;
-        }
+    body {
+        margin: 0;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        background: #0f172a;
+        color: white;
+        display: flex;
+    }
 
-        .sidebar {
-            width: 220px;
-            height: 100vh;
-            background: #111827;
-            padding: 20px;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.5);
-        }
+    .sidebar {
+        width: 220px;
+        height: 100vh;
+        background: #111827;
+        padding: 20px;
+    }
 
-        .sidebar h2 {
-            color: #facc15;
-            text-align: center;
-            margin-bottom: 30px;
-        }
+    .sidebar h2 {
+        color: #facc15;
+        text-align: center;
+    }
 
-        .sidebar a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            margin: 8px 0;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
+    .sidebar a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        margin: 8px 0;
+    }
 
-        .sidebar a:hover {
-            background: #1d4ed8;
-        }
+    .main {
+        flex: 1;
+        padding: 20px;
+    }
 
-        .main {
-            flex: 1;
-            padding: 20px;
-        }
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+        gap: 20px;
+    }
 
-        .topbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+    .card {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 10px;
+    }
 
-        .btn {
-            background: #1d4ed8;
-            padding: 10px 15px;
-            border-radius: 8px;
-            color: white;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background: #2563eb;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: #1e293b;
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 5px solid #facc15;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
-        }
-
-        .card h3 {
-            margin-top: 0;
-            color: #60a5fa;
-        }
-
-        .actividad {
-            margin-top: 30px;
-        }
-
-    </style>
+</style>
+```
 
 </head>
 
 <body>
 
-    <div class="sidebar">
-        <h2>SmartShop</h2>
+```
+<div class="sidebar">
+    <h2>SmartShop</h2>
 
-        <a href="index.html">🏠 Inicio</a>
-        <a href="productos.html">📦 Productos</a>
-        <a href="usuarios.html">👥 Usuarios</a>
-        <a href="reportes.html">📊 Reportes</a>
-        <a href="registro.html">📝 Registro</a>
+    <a href="dashboard.html">🏠 Dashboard</a>
+    <a href="productos.html">📦 Productos</a>
+    <a href="usuarios.html">👥 Usuarios</a>
+    <a href="reportes.html">📊 Reportes</a>
+</div>
+
+<div class="main">
+
+    <h1>Panel de Control</h1>
+
+    <button onclick="cerrarSesion()">
+        Cerrar Sesión
+    </button>
+
+    <div class="card">
+
+        <h2 id="bienvenida"></h2>
+
+        <p>
+            Desde este panel puede gestionar usuarios,
+            productos, inventario y reportes.
+        </p>
+
     </div>
 
-    <div class="main">
+    <br>
 
-        <div class="topbar">
-            <h1>Panel de Control</h1>
-            <a class="btn" href="index.html">Salir</a>
+    <div class="cards">
+
+        <div class="card">
+            <h3>👥 Usuarios</h3>
+            <p id="totalUsuarios">0</p>
         </div>
 
         <div class="card">
-            <h3>Bienvenido Administrador</h3>
-            <p>
-                Desde este panel puede gestionar usuarios,
-                productos, inventario y reportes del sistema SmartShop.
-            </p>
+            <h3>📦 Productos</h3>
+            <p id="totalProductos">0</p>
         </div>
 
-        <br>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>👥 Usuarios</h3>
-                <p>12 registrados</p>
-            </div>
-
-            <div class="card">
-                <h3>📦 Productos</h3>
-                <p>45 en catálogo</p>
-            </div>
-
-            <div class="card">
-                <h3>💰 Ventas</h3>
-                <p>8 realizadas hoy</p>
-            </div>
-
-            <div class="card">
-                <h3>📊 Reportes</h3>
-                <p>3 pendientes</p>
-            </div>
-
-        </div>
-
-        <div class="actividad">
-
-            <h2>Actividad Reciente</h2>
-
-            <div class="card">
-                <p>✔ Nuevo usuario registrado.</p>
-                <p>✔ Producto agregado al inventario.</p>
-                <p>✔ Reporte mensual generado.</p>
-                <p>✔ Actualización de stock realizada.</p>
-            </div>
-
+        <div class="card">
+            <h3>🛒 Ventas</h3>
+            <p>Próximamente</p>
         </div>
 
     </div>
+
+</div>
+```
+
+<script>
+
+let usuarioActivo = JSON.parse(
+    localStorage.getItem("usuarioActivo")
+);
+
+if(!usuarioActivo){
+
+    window.location.href = "index.html";
+
+}
+
+document.getElementById("bienvenida").innerText =
+"Bienvenido " + usuarioActivo.nombre;
+
+let usuarios =
+JSON.parse(localStorage.getItem("usuarios")) || [];
+
+document.getElementById("totalUsuarios").innerText =
+usuarios.length;
+
+let productos =
+JSON.parse(localStorage.getItem("productos")) || [];
+
+document.getElementById("totalProductos").innerText =
+productos.length;
+
+function cerrarSesion(){
+
+    localStorage.removeItem("usuarioActivo");
+
+    window.location.href = "index.html";
+
+}
+
+</script>
 
 </body>
 </html>

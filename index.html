@@ -11,29 +11,66 @@
 
 <body>
 
-    <div class="container">
+  <!DOCTYPE html>
 
-        <img src="img/logo.jpg" alt="Logo SmartShop" class="logo">
+<html lang="es">
 
-        <h1>SMARTSHOP</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartShop - Login</title>
+</head>
 
-        <h3>Gestión Inteligente de Ventas e Inventario</h3>
+<body>
 
-        
-   <input type="text" placeholder="Ingrese Usuario" id="username">
+```
+<div class="container">
 
-        <input type="password" placeholder="Ingrese Contraseña" id="password">
+    <img src="img/logo.jpg" alt="Logo SmartShop" class="logo">
 
-        <button onclick="login()">Iniciar Sesión</button>
+    <h1>SMARTSHOP</h1>
 
-        <p>¿No tienes cuenta?</p>
+    <h3>Gestión Inteligente de Ventas e Inventario</h3>
 
-        <a href="registro.html">Registrarse</a>
+    <form id="loginForm">
 
-    </div>
+        <input
+            type="email"
+            id="username"
+            placeholder="Ingrese Correo"
+            required>
 
-    <script src="JS/script.js"></script>
+        <br><br>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Ingrese Contraseña"
+            required>
+
+        <br><br>
+
+        <button type="submit">
+            Iniciar Sesión
+        </button>
+
+    </form>
+
+    <br>
+
+    <p>¿No tienes cuenta?</p>
+
+    <a href="registro.html">
+        Registrarse
+    </a>
+
+</div>
+
+<script src="script.js"></script>
+```
 
 </body>
 
 </html>
+
+   

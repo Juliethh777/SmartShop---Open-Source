@@ -6,63 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Usuarios - SmartShop</title>
 
-```
-<style>
-
-    body{
-        margin:0;
-        padding:30px;
-        font-family:Arial, sans-serif;
-        background:#0f172a;
-        color:white;
-    }
-
-    h1{
-        color:#60a5fa;
-    }
-
-    a{
-        color:white;
-        text-decoration:none;
-        padding:10px;
-        background:#2563eb;
-        border-radius:5px;
-    }
-
-    table{
-        width:100%;
-        margin-top:20px;
-        border-collapse:collapse;
-    }
-
-    th,td{
-        border:1px solid #334155;
-        padding:10px;
-        text-align:center;
-    }
-
-    th{
-        background:#2563eb;
-    }
-
-    tr{
-        background:#1e293b;
-    }
-
-    button{
-        padding:8px;
-        cursor:pointer;
-        border:none;
-        border-radius:5px;
-    }
-
-</style>
-```
+    <link rel="stylesheet" href="app.css">
 
 </head>
 <body>
 
-<h1>👥 Gestión de Usuarios</h1>
+<h1> Gestión de Usuarios</h1>
 
 <a href="dashboard.html">
     Volver al Dashboard
@@ -70,7 +19,6 @@
 
 <table>
 
-```
 <thead>
     <tr>
         <th>ID</th>
@@ -78,13 +26,13 @@
         <th>Correo</th>
         <th>Teléfono</th>
         <th>Rol</th>
+        <th>Acciones</th>
     </tr>
 </thead>
 
 <tbody id="tablaUsuarios">
 
 </tbody>
-```
 
 </table>
 
@@ -93,30 +41,103 @@
 let usuarios =
 JSON.parse(localStorage.getItem("usuarios")) || [];
 
-let tabla =
-document.getElementById("tablaUsuarios");
+function mostrarUsuarios(){
 
-usuarios.forEach(usuario => {
+    let tabla =
+    document.getElementById("tablaUsuarios");
 
-    tabla.innerHTML += `
+    tabla.innerHTML = "";
 
-    <tr>
+    usuarios.forEach(usuario => {
 
-        <td>${usuario.id}</td>
+        tabla.innerHTML += `
 
-        <td>${usuario.nombre}</td>
+        <tr>
 
-        <td>${usuario.correo}</td>
+            <td>${usuario.id}</td>
+            <td>${usuario.nombre}</td>
+            <td>${usuario.correo}</td>
+            <td>${usuario.telefono}</td>
+            <td>${usuario.rol}</td>
 
-        <td>${usuario.telefono}</td>
+            <td>
 
-        <td>${usuario.rol}</td>
+                <button onclick="editarUsuario(${usuario.id})">
+                    Editar
+                </button>
 
-    </tr>
+                <button onclick="eliminarUsuario(${usuario.id})">
+                    Eliminar
+                </button>
 
-    `;
+            </td>
 
-});
+        </tr>
+
+        `;
+
+    });
+
+}
+
+mostrarUsuarios();
+      
+    function editarUsuario(id){
+
+    id = Number(id);
+
+    let usuario = usuarios.find(
+        u => Number(u.id) === id
+    );
+
+    if(!usuario){
+        alert("Usuario no encontrado");
+        return;
+    }
+
+    let nuevoNombre = prompt(
+        "Nuevo nombre:",
+        usuario.nombre
+    );
+
+    let nuevoTelefono = prompt(
+        "Nuevo teléfono:",
+        usuario.telefono
+    );
+
+    if(nuevoNombre){
+
+        usuario.nombre = nuevoNombre;
+        usuario.telefono = nuevoTelefono;
+
+        localStorage.setItem(
+            "usuarios",
+            JSON.stringify(usuarios)
+        );
+
+        mostrarUsuarios();
+    }
+}
+
+     function eliminarUsuario(id){
+
+    id = Number(id);
+
+    if(confirm("¿Desea eliminar este usuario?")){
+
+        usuarios = usuarios.filter(
+            usuario => Number(usuario.id) !== id
+        );
+
+        localStorage.setItem(
+            "usuarios",
+            JSON.stringify(usuarios)
+        );
+
+        mostrarUsuarios();
+    }
+}
+
 
 </script>
 

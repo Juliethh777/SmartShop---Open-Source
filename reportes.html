@@ -5,97 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Reportes - SmartShop</title>
 
-    <style>
-
-        body {
-            margin: 0;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            background: #0f172a;
-            color: white;
-            padding: 30px;
-        }
-
-        h1 {
-            color: #60a5fa;
-        }
-
-        .btn {
-            background: #2563eb;
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-right: 10px;
-        }
-
-        .btn:hover {
-            background: #1d4ed8;
-        }
-
-        .acciones {
-            margin: 20px 0;
-        }
-
-        button {
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            margin-right: 10px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #1d4ed8;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #1e293b;
-        }
-
-        th {
-            background: #2563eb;
-            padding: 12px;
-        }
-
-        td {
-            padding: 12px;
-            text-align: center;
-            border: 1px solid #334155;
-        }
-
-        .resumen {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #1e293b;
-            border-left: 5px solid #facc15;
-            border-radius: 10px;
-        }
-
-    </style>
+     <link rel="stylesheet" href="app.css">
 
 </head>
 
 <body>
 
-    <h1>📊 Gestión de Reportes</h1>
+    <h1>Gestión de Reportes</h1>
 
     <a class="btn" href="dashboard.html">Volver al Panel</a>
 
     <div class="resumen">
         <h3>Resumen General</h3>
-        <p>Total de ventas del mes: $5.500.000</p>
-        <p>Usuarios activos: 35</p>
-        <p>Productos registrados: 45</p>
+        <div class="resumen">
+
+    <h3>Resumen General</h3>
+
+    <p>
+        Usuarios registrados:
+        <span id="usuariosTotal">0</span>
+    </p>
+
+    <p>
+        Productos registrados:
+        <span id="productosTotal">0</span>
+    </p>
+
+    <p>
+        Valor total inventario:
+        $
+        <span id="inventarioTotal">0</span>
+    </p>
+
     </div>
 
     <div class="acciones">
-        <button>📄 Generar Reporte</button>
-        <button>⬇️ Exportar PDF</button>
-        <button>📈 Ver Estadísticas</button>
+        <button>Generar Reporte</button>
+        <button> Exportar PDF</button>
+        <button> Ver Estadísticas</button>
     </div>
 
     <table>
@@ -136,6 +83,35 @@
         </tr>
 
     </table>
+
+        <script>
+
+    let usuarios =
+    JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    let productos =
+    JSON.parse(localStorage.getItem("productos")) || [];
+
+        document.getElementById("usuariosTotal").innerText =
+        usuarios.length;
+
+        document.getElementById("productosTotal").innerText =
+        productos.length;
+
+    let totalInventario = 0;
+
+      productos.forEach(producto => {
+
+    totalInventario +=
+    Number(producto.precio) *
+    Number(producto.stock);
+
+});
+
+        document.getElementById("inventarioTotal").innerText =
+        totalInventario.toLocaleString();
+   
+</script>
 
 </body>
 </html>
